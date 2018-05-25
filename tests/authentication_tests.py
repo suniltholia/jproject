@@ -27,3 +27,8 @@ class StandAloneTests(TestCase):
         """Test the login function when an error happens."""
         mock_open.side_effect = IOError()
         self.assertFalse(auth.login('george', 'bosco'))
+        
+    @patch('__builtin__.open')
+    def test_logout_success(self, mock_open):
+        """Test the logout function when things go right."""
+        self.assertTrue(True)

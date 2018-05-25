@@ -7,14 +7,11 @@ def login(username, password):
         user_file = open('/etc/users.txt')    
         user_buf = user_file.read()
         users = [line.split("|") for line in user_buf.split("\n")]
-        if [username, password] in users:
-            return True
-        else:
-            return False
+        return ([username, password] in users)? True : False
     except Exception as exc:
-        print("I can't authenticate you.")
+        print("I can't authenticate you. {}".format(exc))
         return False
         
 def logout():
+    """Log the user out."""
     print('You are now logged out.')
-
