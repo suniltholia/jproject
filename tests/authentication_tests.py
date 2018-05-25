@@ -29,6 +29,6 @@ class StandAloneTests(TestCase):
         self.assertFalse(auth.login('george', 'bosco'))
         
     @patch('__builtin__.open')
-    def test_logout_success(self, mock_open):
+    def test_logout_success(self):
         """Test the logout function when things go right."""
-        self.assertTrue(True)
+        return True
